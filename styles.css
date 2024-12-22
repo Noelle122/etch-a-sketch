@@ -1,0 +1,17 @@
+.container{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.squareContainer{
+    display: flex;
+    gap: 4px;
+}
+
+.square{
+    background-color: gray;
+    width: 24px;
+    height: 24px;
+}

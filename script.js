@@ -2,10 +2,16 @@ function createGrid(dimensions=16){
     let container=document.querySelector(".container");
     if(container.childElementCount>1)
         clearGrid(container);
-    for(let i=0; i<(dimensions*dimensions); i++){
-        let square=document.createElement("div");
-        square.classList.add("square");
-        container.appendChild(square);
+    for(let i=0; i<dimensions; i++){
+        let squareContainer=document.createElement("div");
+        squareContainer.classList.add("squareContainer");
+        container.appendChild(squareContainer);
+
+        for(let j=0; j<dimensions; j++){
+            let square=document.createElement("div");
+            square.classList.add("square");
+            squareContainer.appendChild(square);
+        }
     }
 }
 
@@ -14,11 +20,11 @@ function clearGrid(container){
         container.removeChild(container.firstChild);
 }
 
+createGrid();
 let btnContainer=document.querySelector(".btnContainer");
 let btn=document.createElement("button");
 btn.textContent="Set Grid";
 btnContainer.appendChild(btn);
-createGrid();
 btn.addEventListener("click", function(){
     let dimensions=prompt("Please enter square grid dimensions");
     while(dimensions>100){
