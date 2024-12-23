@@ -11,6 +11,9 @@ function createGrid(dimensions=16){
             let square=document.createElement("div");
             square.classList.add("square");
             squareContainer.appendChild(square);
+            square.addEventListener("mouseenter", function(){
+                square.style.backgroundColor="blue";
+            });
         }
     }
 }
